@@ -15,7 +15,7 @@ def main():
     msg.data = True
     pub_led_left.publish(msg)
 
-    time.sleep(0.5)
+    time.sleep(2)
 
     # deactivate left LED
     msg.data = False
@@ -27,7 +27,7 @@ def main():
     msg.data = True
     pub_led_right.publish(msg)
 
-    time.sleep(0.5)
+    time.sleep(2)
 
     # deactivate right LED
     msg.data = False
