@@ -11,10 +11,19 @@ def main():
     srv_led_off_left = rospy.ServiceProxy('led_off_left', Trigger)
     srv_led_off_right = rospy.ServiceProxy('led_off_right', Trigger)
 
-    srv_led_on_left(); time.sleep(2)
-    srv_led_off_left(); time.sleep(2)
-    srv_led_on_right(); time.sleep(2)
-    srv_led_off_right(); time.sleep(2)
+    ret = srv_led_on_left()
+    print(ret.message)
+    time.sleep(2)
+    ret = srv_led_off_left()
+    print(ret.message)
+
+    time.sleep(1)
+
+    ret = srv_led_on_right()
+    print(ret.message)
+    time.sleep(2)
+    ret = srv_led_off_right()
+    print(ret.message)
 
 if __name__ == '__main__':
     main()
